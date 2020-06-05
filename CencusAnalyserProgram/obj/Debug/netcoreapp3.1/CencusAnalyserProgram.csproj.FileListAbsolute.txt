@@ -10,3 +10,4 @@ C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Deb
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.dll
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.pdb
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.genruntimeconfig.cache
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.csprojAssemblyReference.cache

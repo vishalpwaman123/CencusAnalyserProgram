@@ -1225,6 +1225,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "CencusAnalyserProgram/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CencusAnalyserProgram.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CencusAnalyserProgram.dll": {}
+        }
       }
     }
   },
@@ -4610,10 +4620,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "CencusAnalyserProgram/1.0.0": {
+      "type": "project",
+      "path": "../CencusAnalyserProgram/CencusAnalyserProgram.csproj",
+      "msbuildProject": "../CencusAnalyserProgram/CencusAnalyserProgram.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CencusAnalyserProgram >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
       "nunit >= 3.12.0"
@@ -4644,7 +4660,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Vishal\\source\\repos\\CencusAnalyserProgram\\CencusAnalyserProgram\\CencusAnalyserProgram.csproj": {
+              "projectPath": "C:\\Users\\Vishal\\source\\repos\\CencusAnalyserProgram\\CencusAnalyserProgram\\CencusAnalyserProgram.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
