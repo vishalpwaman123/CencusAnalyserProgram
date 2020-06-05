@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CencusAnalyserProgram", "CencusAnalyserProgram\CencusAnalyserProgram.csproj", "{F3D6D47A-317F-4E4A-9813-556E255B0065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CencusAnalyserTest", "CencusAnalyserTest\CencusAnalyserTest.csproj", "{8FA8263F-09E5-4017-BE1D-8A00ADBCCAE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3D6D47A-317F-4E4A-9813-556E255B0065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D6D47A-317F-4E4A-9813-556E255B0065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D6D47A-317F-4E4A-9813-556E255B0065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D6D47A-317F-4E4A-9813-556E255B0065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA8263F-09E5-4017-BE1D-8A00ADBCCAE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA8263F-09E5-4017-BE1D-8A00ADBCCAE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA8263F-09E5-4017-BE1D-8A00ADBCCAE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA8263F-09E5-4017-BE1D-8A00ADBCCAE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4A95A51-59B1-4001-9642-1A95D0704E1C}
+	EndGlobalSection
+EndGlobal

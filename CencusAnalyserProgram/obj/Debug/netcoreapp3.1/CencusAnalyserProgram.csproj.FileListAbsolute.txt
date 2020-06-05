@@ -1,0 +1,12 @@
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.exe
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.deps.json
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.runtimeconfig.json
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.runtimeconfig.dev.json
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.pdb
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.AssemblyInfoInputs.cache
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.AssemblyInfo.cs
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.csproj.CoreCompileInputs.cache
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.pdb
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserProgram\obj\Debug\netcoreapp3.1\CencusAnalyserProgram.genruntimeconfig.cache
