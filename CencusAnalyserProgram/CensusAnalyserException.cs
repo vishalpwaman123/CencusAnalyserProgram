@@ -8,7 +8,8 @@ namespace CencusAnalyserProgram
     {
         public enum ExceptionType
         {
-            CENSUS_FILE_PROBLEM
+            CENSUS_FILE_PROBLEM,
+            CENSUS_FILE_WRONGE_EXTENSION
         }
 
         public ExceptionType type;
