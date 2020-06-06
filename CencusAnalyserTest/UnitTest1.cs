@@ -48,6 +48,19 @@ namespace CencusAnalyserTest
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.CENSUS_FILE_WRONGE_EXTENSION, e.type);
             }
+        }
+
+        [Test]
+        public void givenIndiaCensusData_WhenDelimeterIncorrect_shouldThrowCustomException()
+        {
+            try
+            {
+                censusAnalyser.loadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMETER_INCORRECT_EXCEPTION, e.type);
+            }
 
         }
 
