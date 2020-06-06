@@ -16,4 +16,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CencusAnalyserProgram\CencusAnalyserProgram.csproj" />
+  </ItemGroup>
+
 </Project>
