@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using CencusAnalyserProgram;
 
 namespace CencusAnalyserProgram
 {
-    public class CensusAnalyser
+    public class CensusAnalyser : Exception
     {
 
         public DataTable loadIndiaCensusData(String csvFilePath)
@@ -42,8 +43,9 @@ namespace CencusAnalyserProgram
                     }
                 }
             }
-            catch (Exception ex)
+            catch (IndexOutOfRangeException e)
             {
+                throw new CensusAnalyserException(e.Message,CensusAnalyserException.ExceptionType.HEADER_INCORRECT);
             }
             return csvData;
         }

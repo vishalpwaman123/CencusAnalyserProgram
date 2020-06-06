@@ -64,5 +64,18 @@ namespace CencusAnalyserTest
 
         }
 
+        [Test]
+        public void givenIndianCensusCSVData__WhenIncorrectHeader_ShouldThrowCustomException()
+        {
+            try
+            {
+                censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.HEADER_INCORRECT, e.type);
+            }
+        }
+
     }
 }
