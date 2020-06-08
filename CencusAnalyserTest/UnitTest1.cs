@@ -11,6 +11,7 @@ namespace CencusAnalyserTest
         private static string WRONG_CSV_FILE_PATH = @"./src/main/resources/IndiaStateCensusData.csv";
         private static string WRONG_CSV_FILE_EXTENSION = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCensusData.pdf";
         private static string INDIA_STATE_CODE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCode.csv";
+        private static string WORNG_INDIA_STATE_CODE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/IndiaStateCode.csv";
 
 
         CensusAnalyser censusAnalyser = new CensusAnalyser();
@@ -84,6 +85,20 @@ namespace CencusAnalyserTest
 
             DataTable csvData = censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
             Assert.AreEqual(37, csvData.Rows.Count);
+
+        }
+
+        [Test]
+        public void givenIndianStateCode_WhenWrongPathName_shouldThrowCustomException()
+        {
+            try
+            {
+                censusAnalyser.loadIndiaCensusData(WORNG_INDIA_STATE_CODE_PATH);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM, e.type);
+            }
 
         }
 
