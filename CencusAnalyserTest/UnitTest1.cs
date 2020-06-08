@@ -116,5 +116,19 @@ namespace CencusAnalyserTest
             }
         }
 
+        [Test]
+        public void givenIndiaStateCode_WhenDelimeterIncorrect_shouldThrowCustomException()
+        {
+            try
+            {
+                censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMETER_INCORRECT_EXCEPTION, e.type);
+            }
+
+        }
+
     }
 }
