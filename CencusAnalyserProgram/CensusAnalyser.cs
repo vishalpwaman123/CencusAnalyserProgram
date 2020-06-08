@@ -47,6 +47,11 @@ namespace CencusAnalyserProgram
             {
                 throw new CensusAnalyserException(e.Message,CensusAnalyserException.ExceptionType.HEADER_INCORRECT);
             }
+            catch (Exception ex)
+            {
+            }
+
+
             return csvData;
         }
 
