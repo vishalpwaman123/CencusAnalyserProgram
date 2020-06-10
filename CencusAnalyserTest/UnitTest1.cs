@@ -21,7 +21,7 @@ namespace CencusAnalyserTest
         public void givenIndianCensusData_CSVFile_ShouldReturnsCorrectRecords()
         {
            
-                DataTable csvData = censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+                DataTable csvData = censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
                 Assert.AreEqual(29, csvData.Rows.Count);
             
         }
@@ -31,7 +31,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(WRONG_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_PATH);
             }
             catch (CensusAnalyserException e)
             {
@@ -45,7 +45,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
+                censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
             {
@@ -58,7 +58,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
+                censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
             {
@@ -72,7 +72,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             }
             catch (CensusAnalyserException e)
             {
@@ -84,7 +84,7 @@ namespace CencusAnalyserTest
         public void givenIndianStateCode_CSVFile_ShouldReturnsCorrectRecords()
         {
 
-            DataTable csvData = censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
+            DataTable csvData = censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             Assert.AreEqual(37, csvData.Rows.Count);
 
         }
@@ -94,7 +94,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(WORNG_INDIA_STATE_CODE_PATH);
+                censusAnalyser.LoadIndiaStateCode(WORNG_INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
             {
@@ -108,7 +108,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(WRONG_STATE_CODE_FILE_EXTENSION);
+                censusAnalyser.LoadIndiaStateCode(WRONG_STATE_CODE_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
             {
@@ -121,7 +121,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
+                censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
             {
@@ -131,11 +131,11 @@ namespace CencusAnalyserTest
         }
 
         [Test]
-        public void givenIndianStateCode__WhenIncorrectHeader_ShouldThrowCustomException()
+        public void givenIndianStateCode_WhenIncorrectHeader_ShouldThrowCustomException()
         {
             try
             {
-                DataTable csvFile = censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
+                censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
             {

@@ -9,50 +9,18 @@ namespace CencusAnalyserProgram
 {
     public class CensusAnalyser : Exception
     {
+        DataTable csvCensusData = new DataTable();
 
-        public DataTable loadIndiaCensusData(String csvFilePath)
+        public DataTable LoadIndiaCensusData(string path)
         {
-            DataTable csvData = new DataTable();
-            try
-            {
+            csvCensusData = new OpenCSVBuilder().LoadData(path);
+            return csvCensusData;
+        }
 
-                using (TextFieldParser csvReader = new TextFieldParser(csvFilePath))
-                {
-                    csvReader.SetDelimiters(new string[] { "," });
-                    csvReader.HasFieldsEnclosedInQuotes = true;
-                    string[] colFields = csvReader.ReadFields();
-                    foreach (string column in colFields)
-                    {
-                        DataColumn datecolumn = new DataColumn(column);
-                        datecolumn.AllowDBNull = true;
-                        csvData.Columns.Add(datecolumn);
-                    }
-
-                    while (!csvReader.EndOfData)
-                    {
-                        string[] fieldData = csvReader.ReadFields();
-                        //Making empty value as null
-                        for (int i = 0; i < fieldData.Length; i++)
-                        {
-                            if (fieldData[i] == "")
-                            {
-                                fieldData[i] = null;
-                            }
-                        }
-                        csvData.Rows.Add(fieldData);
-                    }
-                }
-            }
-            catch (IndexOutOfRangeException e)
-            {
-                throw new CensusAnalyserException(e.Message,CensusAnalyserException.ExceptionType.HEADER_INCORRECT);
-            }
-            catch (Exception ex)
-            {
-            }
-
-
-            return csvData;
+        public DataTable LoadIndiaStateCode(string path)
+        {
+            csvCensusData = new OpenCSVBuilder().LoadData(path);
+            return csvCensusData;
         }
 
     }
