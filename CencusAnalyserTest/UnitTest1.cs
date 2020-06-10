@@ -21,8 +21,8 @@ namespace CencusAnalyserTest
         public void givenIndianCensusData_CSVFile_ShouldReturnsCorrectRecords()
         {
            
-                DataTable csvData = censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-                Assert.AreEqual(29, csvData.Rows.Count);
+                int csvDatacount = censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+                Assert.AreEqual(29,csvDatacount);
             
         }
 
@@ -84,8 +84,8 @@ namespace CencusAnalyserTest
         public void givenIndianStateCode_CSVFile_ShouldReturnsCorrectRecords()
         {
 
-            DataTable csvData = censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
-            Assert.AreEqual(37, csvData.Rows.Count);
+            int csvstateData = censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
+            Assert.AreEqual(37, csvstateData);
 
         }
 
