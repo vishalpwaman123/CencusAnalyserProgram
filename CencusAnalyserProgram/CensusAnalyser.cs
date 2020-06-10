@@ -13,13 +13,16 @@ namespace CencusAnalyserProgram
 
         public DataTable LoadIndiaCensusData(string path)
         {
-            csvCensusData = new OpenCSVBuilder().LoadData(path);
+            
+            ICSVBuilder csvBuilder = CSVBuilderFactory.createOpenCsvBuilder();
+            csvCensusData = csvBuilder.DataLoader(path);
             return csvCensusData;
         }
 
         public DataTable LoadIndiaStateCode(string path)
         {
-            csvCensusData = new OpenCSVBuilder().LoadData(path);
+            ICSVBuilder cSVBuilder = CSVBuilderFactory.createOpenCsvBuilder();
+            csvCensusData = cSVBuilder.DataLoader(path);
             return csvCensusData;
         }
 

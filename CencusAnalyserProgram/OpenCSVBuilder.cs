@@ -6,10 +6,10 @@ using System.Text;
 
 namespace CencusAnalyserProgram
 {
-    public class OpenCSVBuilder
+    public class OpenCSVBuilder : ICSVBuilder
     {
 
-        public DataTable LoadData(string csvFilePath)
+        public DataTable DataLoader(string csvFilePath)
         {
 
             DataTable csvData = new DataTable();
