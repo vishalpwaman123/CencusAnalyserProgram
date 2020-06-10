@@ -130,5 +130,18 @@ namespace CencusAnalyserTest
 
         }
 
+        [Test]
+        public void givenIndianStateCode__WhenIncorrectHeader_ShouldThrowCustomException()
+        {
+            try
+            {
+                DataTable csvFile = censusAnalyser.loadIndiaCensusData(INDIA_STATE_CODE_PATH);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.HEADER_INCORRECT, e.type);
+            }
+        }
+
     }
 }
