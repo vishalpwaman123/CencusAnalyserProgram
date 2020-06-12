@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CencusAnalyserProgram
 {
+    /// <summary>
+    /// Created Interface IcsvBuilder to accsess LoadData Method Globally
+    /// </summary>
     public interface ICSVBuilder
     {
         public DataTable DataLoader(string path);

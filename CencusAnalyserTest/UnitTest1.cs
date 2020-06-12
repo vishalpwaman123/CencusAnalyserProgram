@@ -1,36 +1,51 @@
 using NUnit.Framework;
 using CencusAnalyserProgram;
 using System.Data;
+using Newtonsoft.Json.Linq;
+using System;
 
 namespace CencusAnalyserTest
 {
     public class Tests
     {
-
+        /// <summary>
+        /// Used string variables to store the csv file paths
+        /// </summary>
+        
         private static string INDIA_CENSUS_CSV_FILE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCensusData.csv";
         private static string WRONG_CSV_FILE_PATH = @"./src/main/resources/IndiaStateCensusData.csv";
         private static string WRONG_CSV_FILE_EXTENSION = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCensusData.pdf";
         private static string INDIA_STATE_CODE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCode.csv";
         private static string WORNG_INDIA_STATE_CODE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/IndiaStateCode.csv";
         private static string WRONG_STATE_CODE_FILE_EXTENSION = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCode.jpg";
+        public string INDIAN_STATE_CENSUS_JSON_PATH= @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCensusData.JSON";
+        public string INDIAN_STATE_CODE_JSON_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCode.JSON";
 
-
-        CensusAnalyser censusAnalyser = new CensusAnalyser();
+        /// <summary>
+        /// Load the Indian Census File and Check For the number of records present in the file
+        /// </summary>
 
         [Test]
         public void givenIndianCensusData_CSVFile_ShouldReturnsCorrectRecords()
         {
-           
-                int csvDatacount = censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-                Assert.AreEqual(29,csvDatacount);
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            int csvDatacount = censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            Assert.AreEqual(29,csvDatacount);
             
         }
+
+
+        /// <summary>
+        /// Given incorrect file path to load the data should throw exception
+        /// </summary>
+
 
         [Test]
         public void givenIndiaCensusData_WhenWrongPathName_shouldThrowCustomException() 
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_PATH);
             }
             catch (CensusAnalyserException e)
@@ -40,11 +55,18 @@ namespace CencusAnalyserTest
             
         }
 
+
+        /// <summary>
+        /// Given file path with incorrect extension type to load the data should throw exception
+        /// </summary>
+
+
         [Test]
         public void givenIndiaCensusData_WhenWrongExtension_shouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
@@ -53,11 +75,16 @@ namespace CencusAnalyserTest
             }
         }
 
+        /// <summary>
+        /// Given file with incorrect Delimeter to load the data should throw exception
+        /// </summary>
+
         [Test]
         public void givenIndiaCensusData_WhenDelimeterIncorrect_shouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaCensusData(WRONG_CSV_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
@@ -67,11 +94,16 @@ namespace CencusAnalyserTest
 
         }
 
+        /// <summary>
+        /// Given file with incorrect header to load the data should throw exception
+        /// </summary>
+
         [Test]
         public void givenIndianCensusCSVData__WhenIncorrectHeader_ShouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             }
             catch (CensusAnalyserException e)
@@ -80,20 +112,32 @@ namespace CencusAnalyserTest
             }
         }
 
+
+        /// <summary>
+        /// Load the Indian Statem Code File and Check For the number of records present in the file
+        /// </summary>
+
+
         [Test]
         public void givenIndianStateCode_CSVFile_ShouldReturnsCorrectRecords()
         {
-
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
             int csvstateData = censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             Assert.AreEqual(37, csvstateData);
 
         }
+
+
+        /// <summary>
+        /// Given incorrect file path to load the data should throw exception
+        /// </summary>
 
         [Test]
         public void givenIndianStateCode_WhenWrongPathName_shouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaStateCode(WORNG_INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
@@ -103,11 +147,16 @@ namespace CencusAnalyserTest
 
         }
 
+        /// <summary>
+        /// Given file path with incorrect extension type to load the data should throw exception
+        /// </summary>
+
         [Test]
         public void givenIndianStateCode_WhenWrongExtension_shouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaStateCode(WRONG_STATE_CODE_FILE_EXTENSION);
             }
             catch (CensusAnalyserException e)
@@ -116,11 +165,16 @@ namespace CencusAnalyserTest
             }
         }
 
+        /// <summary>
+        /// Given file with incorrect Delimeter to load the data should throw exception
+        /// </summary>
+
         [Test]
         public void givenIndiaStateCode_WhenDelimeterIncorrect_shouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
@@ -130,17 +184,41 @@ namespace CencusAnalyserTest
 
         }
 
+        /// <summary>
+        /// Given file with incorrect header to load the data should throw exception
+        /// </summary>
+
         [Test]
         public void givenIndianStateCode_WhenIncorrectHeader_ShouldThrowCustomException()
         {
             try
             {
+                CensusAnalyser censusAnalyser = new CensusAnalyser();
                 censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.HEADER_INCORRECT, e.type);
             }
+        }
+
+        [Test]
+        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnFirstState()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",0);
+            Assert.AreEqual("Andhra Pradesh",sortedData);
+        }
+
+        [Test]
+        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLastState()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",28);
+            Assert.AreEqual("West Bengal", sortedData);
+            
         }
 
     }

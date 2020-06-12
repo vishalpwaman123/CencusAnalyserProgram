@@ -9,6 +9,14 @@ namespace CencusAnalyserProgram
     public class OpenCSVBuilder : ICSVBuilder
     {
 
+        /// <summary>
+        /// This Method is Used to Load both Census And StateCode data
+        /// </summary>
+        /// <param name="csvData">csvData parameter is the object of DataTable to store the loaded data</param>
+        /// <param name="path">path parameter contains the path of the CSV File</param>
+        /// <returns>It returns the loaded data</returns>
+
+
         public DataTable DataLoader(string csvFilePath)
         {
 

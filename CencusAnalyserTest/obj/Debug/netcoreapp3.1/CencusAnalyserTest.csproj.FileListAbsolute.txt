@@ -1,7 +1,6 @@
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.csprojAssemblyReference.cache
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.AssemblyInfoInputs.cache
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.AssemblyInfo.cs
-C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.csproj.CoreCompileInputs.cache
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\CencusAnalyserProgram.exe
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
@@ -97,3 +96,15 @@ C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.dll
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.pdb
 C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.genruntimeconfig.cache
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\ChoETL.Core.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Vishal\source\repos\CencusAnalyserProgram\CencusAnalyserTest\obj\Debug\netcoreapp3.1\CencusAnalyserTest.csproj.CoreCompileInputs.cache

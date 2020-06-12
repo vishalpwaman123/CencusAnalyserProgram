@@ -4,15 +4,26 @@ using System.Text;
 
 namespace CencusAnalyserProgram
 {
+
+    /// <summary>
+    /// CensusAnalyserException Class used to Define Custom Exceptions
+    /// </summary>
+
     public class CensusAnalyserException : Exception
     {
         public string message;
+
+        /// <summary>
+        /// Enum is Used to define Enumerated Data types
+        /// </summary>
+
         public enum ExceptionType
         {
             CENSUS_FILE_PROBLEM,
             CENSUS_FILE_WRONGE_EXTENSION,
             DELIMETER_INCORRECT_EXCEPTION,
-            HEADER_INCORRECT
+            HEADER_INCORRECT,
+            DATA_NOT_FOUND
         }
 
         public ExceptionType type;
