@@ -16,7 +16,7 @@ namespace CencusAnalyserProgram
 {
     public class CensusAnalyser : Exception
     {
-        DataTable csvCensusData = new DataTable();
+        
         public List<IndianCencusCSV> indiancensusList = new List<IndianCencusCSV>();
         public List<IndianStateCodeCSV> indiaStateCodeList = new List<IndianStateCodeCSV>();
 
@@ -30,6 +30,7 @@ namespace CencusAnalyserProgram
         public int LoadIndiaCensusData(string path)
         {
             int row = 0;
+            DataTable csvCensusData = new DataTable();
             ICSVBuilder csvBuilder = CSVBuilderFactory.createOpenCsvBuilder();
             csvCensusData = csvBuilder.DataLoader(path);
 
@@ -56,13 +57,14 @@ namespace CencusAnalyserProgram
         public int LoadIndiaStateCode(string path)
         {
             int row = 0;
+            DataTable csvCensusData = new DataTable();
             ICSVBuilder cSVBuilder = CSVBuilderFactory.createOpenCsvBuilder();
             csvCensusData = cSVBuilder.DataLoader(path);
             while (row < csvCensusData.Rows.Count)
             {
                 IndianStateCodeCSV indianStateCodeCsv = new IndianStateCodeCSV();
                 indianStateCodeCsv.srNo = Convert.ToInt32(csvCensusData.Rows[row]["SrNo"]);
-                indianStateCodeCsv.stateName = (csvCensusData.Rows[row]["State Name"].ToString());
+                indianStateCodeCsv.state = (csvCensusData.Rows[row]["State Name"].ToString());
                 indianStateCodeCsv.tin = Convert.ToInt32(csvCensusData.Rows[row]["TIN"].ToString());
                 indianStateCodeCsv.stateCode = csvCensusData.Rows[row]["StateCode"].ToString();
                 indiaStateCodeList.Add(indianStateCodeCsv);
@@ -78,9 +80,19 @@ namespace CencusAnalyserProgram
                 throw new CensusAnalyserException("No Census Data Found",CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiancensusList.OrderBy(x => x.state);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
-           
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key,index);
+        }
+
+        public string GetStateCodeWiseSortedData(string jsonFilepath, string key, int index)
+        {
+
+            if (indiaStateCodeList == null || indiaStateCodeList.Count() == 0)
+                throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
+            object listAlphabetically = indiaStateCodeList.OrderBy(x => x.state);
+            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+            File.WriteAllText(jsonFilepath, dataInJsonFormat);
+            return RetriveDataOnKey(jsonFilepath, key, index);
         }
 
         private static string RetriveDataOnKey(string jsonPath, string key, int index)

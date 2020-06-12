@@ -124,7 +124,6 @@ namespace CencusAnalyserTest
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             int csvstateData = censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
             Assert.AreEqual(37, csvstateData);
-
         }
 
 
@@ -216,9 +215,18 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",28);
+            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 28);
             Assert.AreEqual("West Bengal", sortedData);
-            
+
+        }
+
+        [Test]
+        public void givenIndianStateCodeCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnFirstState()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
+            string sortedData = censusAnalyser.GetStateCodeWiseSortedData(INDIAN_STATE_CODE_JSON_PATH, "state", 0);
+            Assert.AreEqual("Andaman and Nicobar Islands", sortedData);
         }
 
     }
