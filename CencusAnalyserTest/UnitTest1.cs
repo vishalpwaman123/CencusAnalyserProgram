@@ -237,5 +237,23 @@ namespace CencusAnalyserTest
             string sortedData = censusAnalyser.GetStateCodeWiseSortedData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
             Assert.AreEqual("West Bengal", sortedData);
         }
+
+        [Test]
+        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowestPopulation()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 0);
+            Assert.AreEqual("607688", sortedData);
+        }
+
+        [Test]
+        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnPopulationDencity()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "dencityPerSqKm", 0);
+            Assert.AreEqual("86", sortedData);
+        }
     }
 }
