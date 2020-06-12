@@ -229,5 +229,13 @@ namespace CencusAnalyserTest
             Assert.AreEqual("Andaman and Nicobar Islands", sortedData);
         }
 
+        [Test]
+        public void givenIndianStateCodeCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLastState()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
+            string sortedData = censusAnalyser.GetStateCodeWiseSortedData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
+            Assert.AreEqual("West Bengal", sortedData);
+        }
     }
 }
