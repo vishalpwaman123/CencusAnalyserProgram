@@ -5,7 +5,6 @@ using System.Data;
 using System.Text;
 using CencusAnalyserProgram;
 using System.IO;
-using ChoETL;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Linq;
@@ -19,7 +18,7 @@ namespace CencusAnalyserProgram
         
         public List<IndianCencusCSV> indiancensusList = new List<IndianCencusCSV>();
         public List<IndianStateCodeCSV> indiaStateCodeList = new List<IndianStateCodeCSV>();
-
+        public Dictionary<string, CensusDAO> csvFileMap = new Dictionary<string, CensusDAO>();
 
         /// <summary>
         /// This Method takes the input path of Indian Census Csv File and give to the LoadData Method
@@ -44,7 +43,8 @@ namespace CencusAnalyserProgram
                 indiancensusList.Add(indianCencusCsv);
                 row++;
             }
-            return (indiancensusList.Count);
+            
+            return indiancensusList.Count();
         }
 
         /// <summary>
@@ -70,7 +70,9 @@ namespace CencusAnalyserProgram
                 indiaStateCodeList.Add(indianStateCodeCsv);
                 row++;
             }
-            return indiaStateCodeList.Count;
+            
+            //foreach (indiaStateCodeList->csvFileMap.put(indiaStateCodeList.state, new CensusDAO(indiaStateCodeList))) ;
+            return indiaStateCodeList.Count();
         }
 
         public string GetStateCodeWiseSortedCensusData(string jsonFilepath,string key,int index)
@@ -90,6 +92,17 @@ namespace CencusAnalyserProgram
             if (indiaStateCodeList == null || indiaStateCodeList.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiaStateCodeList.OrderBy(x => x.state);
+            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+            File.WriteAllText(jsonFilepath, dataInJsonFormat);
+            return RetriveDataOnKey(jsonFilepath, key, index);
+        }
+
+        public string GetpopulationWiseSortedCensusData(string jsonFilepath, string key, int index)
+        {
+
+            if (indiancensusList == null || indiancensusList.Count() == 0)
+                throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
+            object listAlphabetically = indiancensusList.OrderBy(x => x.population);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
