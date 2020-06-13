@@ -20,6 +20,7 @@ namespace CencusAnalyserTest
         private static string WRONG_STATE_CODE_FILE_EXTENSION = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCode.jpg";
         public string INDIAN_STATE_CENSUS_JSON_PATH= @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCensusData.JSON";
         public string INDIAN_STATE_CODE_JSON_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCode.JSON";
+        private static string US_CENSUS_FILE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/USCensusData.csv";
 
         /// <summary>
         /// Load the Indian Census File and Check For the number of records present in the file
@@ -272,6 +273,14 @@ namespace CencusAnalyserTest
             censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 28);
             Assert.AreEqual("199812341", sortedData);
+        }
+
+        [Test]
+        public void givenUsCencusData_CSVFile_ShouldReturnsCorrectRecords()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            int csvstateData = censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            Assert.AreEqual(51, csvstateData);
         }
 
     }

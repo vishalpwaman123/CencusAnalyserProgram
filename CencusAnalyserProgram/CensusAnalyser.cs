@@ -18,6 +18,8 @@ namespace CencusAnalyserProgram
         
         public List<IndianCencusCSV> indiancensusList = new List<IndianCencusCSV>();
         public List<IndianStateCodeCSV> indiaStateCodeList = new List<IndianStateCodeCSV>();
+        public List<UsCencusCSV> UsCencusList = new List<UsCencusCSV>();
+
         //public Dictionary<string, CensusDAO> csvFileMap = new Dictionary<string, CensusDAO>();
 
         /// <summary>
@@ -73,6 +75,28 @@ namespace CencusAnalyserProgram
             
             //foreach (indiaStateCodeList->csvFileMap.put(indiaStateCodeList.state, new CensusDAO(indiaStateCodeList))) ;
             return indiaStateCodeList.Count();
+        }
+
+        public int LoadUsCencusData(string path)
+        {
+            int row = 0;
+            DataTable csvCensusData = new DataTable();
+            ICSVBuilder cSVBuilder = CSVBuilderFactory.createOpenCsvBuilder();
+            csvCensusData = cSVBuilder.DataLoader(path);
+            while (row < csvCensusData.Rows.Count)
+            {
+                UsCencusCSV uscencusCsv = new UsCencusCSV();
+                uscencusCsv.stateId = (csvCensusData.Rows[row]["State_Id"].ToString());
+                uscencusCsv.state = (csvCensusData.Rows[row]["State"].ToString());
+                uscencusCsv.population = Convert.ToInt32(csvCensusData.Rows[row]["Population"].ToString());
+                uscencusCsv.totalArea = Convert.ToDouble(csvCensusData.Rows[row]["Total_area"].ToString());
+                uscencusCsv.populationDencity = Convert.ToDouble(csvCensusData.Rows[row]["Population_Density"].ToString());
+                UsCencusList.Add(uscencusCsv);
+                row++;
+            }
+
+            //foreach (indiaStateCodeList->csvFileMap.put(indiaStateCodeList.state, new CensusDAO(indiaStateCodeList))) ;
+            return UsCencusList.Count();
         }
 
         public string GetStateCodeWiseSortedCensusData(string jsonFilepath,string key,int index)
