@@ -143,6 +143,17 @@ namespace CencusAnalyserProgram
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
 
+        public string GetpopulationWiseSortedUsCensusData(string jsonFilepath, string key, int index)
+        {
+
+            if (UsCencusList == null || UsCencusList.Count() == 0)
+                throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
+            object listAlphabetically = UsCencusList.OrderBy(x => x.population);
+            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+            File.WriteAllText(jsonFilepath, dataInJsonFormat);
+            return RetriveDataOnKey(jsonFilepath, key, index);
+        }
+
         private static string RetriveDataOnKey(string jsonPath, string key, int index)
         {
             string jfile = File.ReadAllText(jsonPath);

@@ -21,6 +21,7 @@ namespace CencusAnalyserTest
         public string INDIAN_STATE_CENSUS_JSON_PATH= @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCensusData.JSON";
         public string INDIAN_STATE_CODE_JSON_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/indianStateCode.JSON";
         private static string US_CENSUS_FILE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/USCensusData.csv";
+        public string US_CENCUS_JSON_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/UsCencusJsonFile.JSON";
 
         /// <summary>
         /// Load the Indian Census File and Check For the number of records present in the file
@@ -253,8 +254,8 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "dencityPerSqKm", 0);
-            Assert.AreEqual("86", sortedData);
+            string sortedData = censusAnalyser.GetpopulationDencityWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "dencityPerSqKm", 0);
+            Assert.AreEqual("50", sortedData);
         }
 
         [Test]
@@ -281,6 +282,24 @@ namespace CencusAnalyserTest
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             int csvstateData = censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
             Assert.AreEqual(51, csvstateData);
+        }
+
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowestPopulation()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "population", 0);
+            Assert.AreEqual("563626", sortedData);
+        }
+
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighestPopulation()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "population", 50);
+            Assert.AreEqual("37253956", sortedData);
         }
 
     }

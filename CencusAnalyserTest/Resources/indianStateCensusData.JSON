@@ -1,9 +1,9 @@
 [
   {
-    "state": "Sikkim",
-    "population": 607688,
-    "areaInSqKm": 7096,
-    "dencityPerSqKm": 86
+    "state": "Arunachal Pradesh",
+    "population": 1382611,
+    "areaInSqKm": 21000,
+    "dencityPerSqKm": 50
   },
   {
     "state": "Mizoram",
@@ -12,16 +12,16 @@
     "dencityPerSqKm": 52
   },
   {
-    "state": "Arunachal Pradesh",
-    "population": 1382611,
-    "areaInSqKm": 21000,
-    "dencityPerSqKm": 50
+    "state": "Jammu and Kashmir",
+    "population": 12548926,
+    "areaInSqKm": 222236,
+    "dencityPerSqKm": 57
   },
   {
-    "state": "Goa",
-    "population": 1457723,
-    "areaInSqKm": 3702,
-    "dencityPerSqKm": 394
+    "state": "Sikkim",
+    "population": 607688,
+    "areaInSqKm": 7096,
+    "dencityPerSqKm": 86
   },
   {
     "state": "Nagaland",
@@ -36,40 +36,16 @@
     "dencityPerSqKm": 122
   },
   {
-    "state": "Meghalaya",
-    "population": 2964007,
-    "areaInSqKm": 22429,
-    "dencityPerSqKm": 132
-  },
-  {
-    "state": "Tripura",
-    "population": 3671032,
-    "areaInSqKm": 10486,
-    "dencityPerSqKm": 350
-  },
-  {
     "state": "Himachal Pradesh",
     "population": 6864602,
     "areaInSqKm": 55673,
     "dencityPerSqKm": 123
   },
   {
-    "state": "Uttarakhand",
-    "population": 10116752,
-    "areaInSqKm": 53483,
-    "dencityPerSqKm": 189
-  },
-  {
-    "state": "Jammu and Kashmir",
-    "population": 12548926,
-    "areaInSqKm": 222236,
-    "dencityPerSqKm": 57
-  },
-  {
-    "state": "Haryana",
-    "population": 25353081,
-    "areaInSqKm": 44212,
-    "dencityPerSqKm": 573
+    "state": "Meghalaya",
+    "population": 2964007,
+    "areaInSqKm": 22429,
+    "dencityPerSqKm": 132
   },
   {
     "state": "Chattisgarh",
@@ -78,34 +54,22 @@
     "dencityPerSqKm": 189
   },
   {
-    "state": "Punjab",
-    "population": 27704236,
-    "areaInSqKm": 50362,
-    "dencityPerSqKm": 550
+    "state": "Uttarakhand",
+    "population": 10116752,
+    "areaInSqKm": 53483,
+    "dencityPerSqKm": 189
   },
   {
-    "state": "Assam",
-    "population": 31169272,
-    "areaInSqKm": 78438,
-    "dencityPerSqKm": 397
+    "state": "Rajasthan",
+    "population": 68621012,
+    "areaInSqKm": 342239,
+    "dencityPerSqKm": 201
   },
   {
-    "state": "Jharkhand",
-    "population": 32966238,
-    "areaInSqKm": 79714,
-    "dencityPerSqKm": 414
-  },
-  {
-    "state": "Kerala",
-    "population": 33387677,
-    "areaInSqKm": 38863,
-    "dencityPerSqKm": 859
-  },
-  {
-    "state": "Telangana",
-    "population": 35286757,
-    "areaInSqKm": 114840,
-    "dencityPerSqKm": 307
+    "state": "Madhya Pradesh",
+    "population": 72597565,
+    "areaInSqKm": 308245,
+    "dencityPerSqKm": 236
   },
   {
     "state": "Odisha",
@@ -120,6 +84,12 @@
     "dencityPerSqKm": 303
   },
   {
+    "state": "Telangana",
+    "population": 35286757,
+    "areaInSqKm": 114840,
+    "dencityPerSqKm": 307
+  },
+  {
     "state": "Gujarat",
     "population": 60383628,
     "areaInSqKm": 196024,
@@ -132,10 +102,40 @@
     "dencityPerSqKm": 319
   },
   {
-    "state": "Rajasthan",
-    "population": 68621012,
-    "areaInSqKm": 342239,
-    "dencityPerSqKm": 201
+    "state": "Tripura",
+    "population": 3671032,
+    "areaInSqKm": 10486,
+    "dencityPerSqKm": 350
+  },
+  {
+    "state": "Maharashtra",
+    "population": 112372972,
+    "areaInSqKm": 307713,
+    "dencityPerSqKm": 365
+  },
+  {
+    "state": "Goa",
+    "population": 1457723,
+    "areaInSqKm": 3702,
+    "dencityPerSqKm": 394
+  },
+  {
+    "state": "Assam",
+    "population": 31169272,
+    "areaInSqKm": 78438,
+    "dencityPerSqKm": 397
+  },
+  {
+    "state": "Jharkhand",
+    "population": 32966238,
+    "areaInSqKm": 79714,
+    "dencityPerSqKm": 414
+  },
+  {
+    "state": "Punjab",
+    "population": 27704236,
+    "areaInSqKm": 50362,
+    "dencityPerSqKm": 550
   },
   {
     "state": "Tamil Nadu",
@@ -144,10 +144,22 @@
     "dencityPerSqKm": 555
   },
   {
-    "state": "Madhya Pradesh",
-    "population": 72597565,
-    "areaInSqKm": 308245,
-    "dencityPerSqKm": 236
+    "state": "Haryana",
+    "population": 25353081,
+    "areaInSqKm": 44212,
+    "dencityPerSqKm": 573
+  },
+  {
+    "state": "Uttar Pradesh",
+    "population": 199812341,
+    "areaInSqKm": 240928,
+    "dencityPerSqKm": 828
+  },
+  {
+    "state": "Kerala",
+    "population": 33387677,
+    "areaInSqKm": 38863,
+    "dencityPerSqKm": 859
   },
   {
     "state": "West Bengal",
@@ -160,17 +172,5 @@
     "population": 103804637,
     "areaInSqKm": 94163,
     "dencityPerSqKm": 1102
-  },
-  {
-    "state": "Maharashtra",
-    "population": 112372972,
-    "areaInSqKm": 307713,
-    "dencityPerSqKm": 365
-  },
-  {
-    "state": "Uttar Pradesh",
-    "population": 199812341,
-    "areaInSqKm": 240928,
-    "dencityPerSqKm": 828
   }
 ]
