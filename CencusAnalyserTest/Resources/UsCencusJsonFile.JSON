@@ -4,356 +4,611 @@
     "state": "Wyoming",
     "population": 563626,
     "totalArea": 253334.72,
-    "populationDencity": 2.24
+    "populationDencity": 2.24,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "DC",
     "state": "District of Columbia",
     "population": 601723,
     "totalArea": 177.0,
-    "populationDencity": 3805.61
+    "populationDencity": 3805.61,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "VT",
     "state": "Vermont",
     "population": 625741,
     "totalArea": 24906.28,
-    "populationDencity": 26.22
+    "populationDencity": 26.22,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "ND",
     "state": "North Dakota",
     "population": 672591,
     "totalArea": 183107.94,
-    "populationDencity": 3.75
+    "populationDencity": 3.75,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "AK",
     "state": "Alaska",
     "population": 710231,
     "totalArea": 1723338.01,
-    "populationDencity": 0.46
+    "populationDencity": 0.46,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "SD",
     "state": "South Dakota",
     "population": 814180,
     "totalArea": 199728.84,
-    "populationDencity": 4.13
+    "populationDencity": 4.13,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "DE",
     "state": "Delaware",
     "population": 897934,
     "totalArea": 6445.76,
-    "populationDencity": 177.92
+    "populationDencity": 177.92,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MT",
     "state": "Montana",
     "population": 989415,
     "totalArea": 380831.38,
-    "populationDencity": 2.63
+    "populationDencity": 2.63,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "RI",
     "state": "Rhode Island",
     "population": 1052567,
     "totalArea": 4001.25,
-    "populationDencity": 393.09
+    "populationDencity": 393.09,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NH",
     "state": "New Hampshire",
     "population": 1316470,
     "totalArea": 24214.23,
-    "populationDencity": 56.76
+    "populationDencity": 56.76,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "ME",
     "state": "Maine",
     "population": 1328361,
     "totalArea": 91633.17,
-    "populationDencity": 16.64
+    "populationDencity": 16.64,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "HI",
     "state": "Hawaii",
     "population": 1360301,
     "totalArea": 28313.05,
-    "populationDencity": 81.78
+    "populationDencity": 81.78,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "ID",
     "state": "Idaho",
     "population": 1567582,
     "totalArea": 216442.74,
-    "populationDencity": 7.34
+    "populationDencity": 7.34,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NE",
     "state": "Nebraska",
     "population": 1826341,
     "totalArea": 200330.05,
-    "populationDencity": 9.19
+    "populationDencity": 9.19,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "WV",
     "state": "West Virginia",
     "population": 1852994,
     "totalArea": 62755.56,
-    "populationDencity": 29.77
+    "populationDencity": 29.77,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NM",
     "state": "New Mexico",
     "population": 2059179,
     "totalArea": 314917.66,
-    "populationDencity": 6.56
+    "populationDencity": 6.56,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NV",
     "state": "Nevada",
     "population": 2700551,
     "totalArea": 286379.91,
-    "populationDencity": 9.5
+    "populationDencity": 9.5,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "UT",
     "state": "Utah",
     "population": 2763885,
     "totalArea": 219882.07,
-    "populationDencity": 12.97
+    "populationDencity": 12.97,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "KS",
     "state": "Kansas",
     "population": 2853118,
     "totalArea": 213100.13,
-    "populationDencity": 13.47
+    "populationDencity": 13.47,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "AR",
     "state": "Arkansas",
     "population": 2915918,
     "totalArea": 137731.91,
-    "populationDencity": 21.62
+    "populationDencity": 21.62,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MS",
     "state": "Mississippi",
     "population": 2967297,
     "totalArea": 125437.83,
-    "populationDencity": 24.4
+    "populationDencity": 24.4,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "IA",
     "state": "Iowa",
     "population": 3046355,
     "totalArea": 145746.02,
-    "populationDencity": 21.04
+    "populationDencity": 21.04,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "CT",
     "state": "Connecticut",
     "population": 3574097,
     "totalArea": 14357.38,
-    "populationDencity": 284.98
+    "populationDencity": 284.98,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "OK",
     "state": "Oklahoma",
     "population": 3751351,
     "totalArea": 181037.37,
-    "populationDencity": 21.12
+    "populationDencity": 21.12,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "OR",
     "state": "Oregon",
     "population": 3831074,
     "totalArea": 254799.43,
-    "populationDencity": 15.41
+    "populationDencity": 15.41,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "KY",
     "state": "Kentucky",
     "population": 4339367,
     "totalArea": 104655.8,
-    "populationDencity": 42.43
+    "populationDencity": 42.43,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "LA",
     "state": "Louisiana",
     "population": 4533372,
     "totalArea": 135658.83,
-    "populationDencity": 40.5
+    "populationDencity": 40.5,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "SC",
     "state": "South Carolina",
     "population": 4625364,
     "totalArea": 82932.75,
-    "populationDencity": 59.42
+    "populationDencity": 59.42,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "AL",
     "state": "Alabama",
     "population": 4779736,
     "totalArea": 135767.46,
-    "populationDencity": 36.45
+    "populationDencity": 36.45,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "CO",
     "state": "Colorado",
     "population": 5029196,
     "totalArea": 269601.56,
-    "populationDencity": 18.73
+    "populationDencity": 18.73,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MN",
     "state": "Minnesota",
     "population": 5303925,
     "totalArea": 225162.93,
-    "populationDencity": 25.71
+    "populationDencity": 25.71,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "WI",
     "state": "Wisconsin",
     "population": 5686986,
     "totalArea": 169634.97,
-    "populationDencity": 40.54
+    "populationDencity": 40.54,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MD",
     "state": "Maryland",
     "population": 5773552,
     "totalArea": 32131.23,
-    "populationDencity": 229.65
+    "populationDencity": 229.65,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MO",
     "state": "Missouri",
     "population": 5988927,
     "totalArea": 180540.41,
-    "populationDencity": 33.63
+    "populationDencity": 33.63,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "TN",
     "state": "Tennessee",
     "population": 6346105,
     "totalArea": 109153.19,
-    "populationDencity": 59.42
+    "populationDencity": 59.42,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "AZ",
     "state": "Arizona",
     "population": 6392017,
     "totalArea": 295233.74,
-    "populationDencity": 21.74
+    "populationDencity": 21.74,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "IN",
     "state": "Indiana",
     "population": 6483802,
     "totalArea": 94326.27,
-    "populationDencity": 69.88
+    "populationDencity": 69.88,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MA",
     "state": "Massachusetts",
     "population": 6547629,
     "totalArea": 27335.76,
-    "populationDencity": 324.09
+    "populationDencity": 324.09,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "WA",
     "state": "Washington",
     "population": 6724540,
     "totalArea": 184660.98,
-    "populationDencity": 39.07
+    "populationDencity": 39.07,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "VA",
     "state": "Virginia",
     "population": 8001024,
     "totalArea": 110786.64,
-    "populationDencity": 78.22
+    "populationDencity": 78.22,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NJ",
     "state": "New Jersey",
     "population": 8791894,
     "totalArea": 22591.39,
-    "populationDencity": 461.58
+    "populationDencity": 461.58,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NC",
     "state": "North Carolina",
     "population": 9535483,
     "totalArea": 139391.09,
-    "populationDencity": 75.71
+    "populationDencity": 75.71,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "GA",
     "state": "Georgia",
     "population": 9687653,
     "totalArea": 153910.54,
-    "populationDencity": 65.02
+    "populationDencity": 65.02,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "MI",
     "state": "Michigan",
     "population": 9883640,
     "totalArea": 250487.02,
-    "populationDencity": 67.49
+    "populationDencity": 67.49,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "OH",
     "state": "Ohio",
     "population": 11536504,
     "totalArea": 116097.8,
-    "populationDencity": 109.0
+    "populationDencity": 109.0,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "PA",
     "state": "Pennsylvania",
     "population": 12702379,
     "totalArea": 119280.28,
-    "populationDencity": 109.61
+    "populationDencity": 109.61,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "IL",
     "state": "Illinois",
     "population": 12830632,
     "totalArea": 149995.52,
-    "populationDencity": 89.23
+    "populationDencity": 89.23,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "FL",
     "state": "Florida",
     "population": 18801310,
     "totalArea": 170311.79,
-    "populationDencity": 135.37
+    "populationDencity": 135.37,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "NY",
     "state": "New York",
     "population": 19378102,
     "totalArea": 141296.85,
-    "populationDencity": 158.77
+    "populationDencity": 158.77,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "TX",
     "state": "Texas",
     "population": 25145561,
     "totalArea": 695662.15,
-    "populationDencity": 37.18
+    "populationDencity": 37.18,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   },
   {
     "stateId": "CA",
     "state": "California",
     "population": 37253956,
     "totalArea": 423967.74,
-    "populationDencity": 92.32
+    "populationDencity": 92.32,
+    "areaInSqKm": 0,
+    "dencityPerSqKm": 0,
+    "srNo": 0,
+    "tin": 0,
+    "stateCode": null
   }
 ]

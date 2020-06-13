@@ -316,8 +316,26 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
-            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 50);
-            Assert.AreEqual("92.32", sortedData);
+            string sortedData = censusAnalyser.GetpopulationDencityWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 50);
+            Assert.AreEqual("3805.61", sortedData);
+        }
+
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowesttotalArea()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 0);
+            Assert.AreEqual("177", sortedData);
+        }
+
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighesttotalArea()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 50);
+            Assert.AreEqual("1723338.01", sortedData);
         }
 
     }

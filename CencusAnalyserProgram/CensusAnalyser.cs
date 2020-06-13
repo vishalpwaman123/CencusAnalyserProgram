@@ -16,11 +16,11 @@ namespace CencusAnalyserProgram
     public class CensusAnalyser : Exception
     {
         
-        public List<IndianCencusCSV> indiancensusList = new List<IndianCencusCSV>();
-        public List<IndianStateCodeCSV> indiaStateCodeList = new List<IndianStateCodeCSV>();
-        public List<UsCencusCSV> UsCencusList = new List<UsCencusCSV>();
+        public List<CencusDAO> indiancensusList = new List<CencusDAO>();
+        public List<CencusDAO> indiaStateCodeList = new List<CencusDAO>();
+        public List<CencusDAO> UsCencusList = new List<CencusDAO>();
 
-        //public Dictionary<string, CensusDAO> csvFileMap = new Dictionary<string, CensusDAO>();
+        public Dictionary<string, CencusDAO> dictionaryCensus = new Dictionary<string, CencusDAO>();
 
         /// <summary>
         /// This Method takes the input path of Indian Census Csv File and give to the LoadData Method
@@ -37,7 +37,7 @@ namespace CencusAnalyserProgram
 
             while (row < csvCensusData.Rows.Count)
             {
-                IndianCencusCSV indianCencusCsv = new IndianCencusCSV();
+                CencusDAO indianCencusCsv = new CencusDAO();
                 indianCencusCsv.areaInSqKm = Convert.ToInt32(csvCensusData.Rows[row]["AreaInSqKm"].ToString());
                 indianCencusCsv.dencityPerSqKm = Convert.ToInt32(csvCensusData.Rows[row]["DensityPerSqKm"].ToString());
                 indianCencusCsv.population = Convert.ToInt32(csvCensusData.Rows[row]["Population"].ToString());
@@ -45,8 +45,8 @@ namespace CencusAnalyserProgram
                 indiancensusList.Add(indianCencusCsv);
                 row++;
             }
-            
-            return indiancensusList.Count();
+            dictionaryCensus = indiancensusList.ToDictionary(x => x.state);
+            return dictionaryCensus.Count();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace CencusAnalyserProgram
             csvCensusData = cSVBuilder.DataLoader(path);
             while (row < csvCensusData.Rows.Count)
             {
-                IndianStateCodeCSV indianStateCodeCsv = new IndianStateCodeCSV();
+                CencusDAO indianStateCodeCsv = new CencusDAO();
                 indianStateCodeCsv.srNo = Convert.ToInt32(csvCensusData.Rows[row]["SrNo"]);
                 indianStateCodeCsv.state = (csvCensusData.Rows[row]["State Name"].ToString());
                 indianStateCodeCsv.tin = Convert.ToInt32(csvCensusData.Rows[row]["TIN"].ToString());
@@ -72,9 +72,9 @@ namespace CencusAnalyserProgram
                 indiaStateCodeList.Add(indianStateCodeCsv);
                 row++;
             }
-            
-            //foreach (indiaStateCodeList->csvFileMap.put(indiaStateCodeList.state, new CensusDAO(indiaStateCodeList))) ;
-            return indiaStateCodeList.Count();
+
+            dictionaryCensus = indiaStateCodeList.ToDictionary(x => x.state);
+            return dictionaryCensus.Count();
         }
 
         public int LoadUsCencusData(string path)
@@ -85,7 +85,7 @@ namespace CencusAnalyserProgram
             csvCensusData = cSVBuilder.DataLoader(path);
             while (row < csvCensusData.Rows.Count)
             {
-                UsCencusCSV uscencusCsv = new UsCencusCSV();
+                CencusDAO uscencusCsv = new CencusDAO();
                 uscencusCsv.stateId = (csvCensusData.Rows[row]["State_Id"].ToString());
                 uscencusCsv.state = (csvCensusData.Rows[row]["State"].ToString());
                 uscencusCsv.population = Convert.ToInt32(csvCensusData.Rows[row]["Population"].ToString());
@@ -94,15 +94,15 @@ namespace CencusAnalyserProgram
                 UsCencusList.Add(uscencusCsv);
                 row++;
             }
+            dictionaryCensus = UsCencusList.ToDictionary(x => x.state);
+            return dictionaryCensus.Count();
 
-            //foreach (indiaStateCodeList->csvFileMap.put(indiaStateCodeList.state, new CensusDAO(indiaStateCodeList))) ;
-            return UsCencusList.Count();
         }
 
         public string GetStateCodeWiseSortedCensusData(string jsonFilepath,string key,int index)
         {
            
-            if (indiancensusList == null || indiancensusList.Count() == 0)
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found",CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiancensusList.OrderBy(x => x.state);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
@@ -113,7 +113,7 @@ namespace CencusAnalyserProgram
         public string GetStateCodeWiseSortedData(string jsonFilepath, string key, int index)
         {
 
-            if (indiaStateCodeList == null || indiaStateCodeList.Count() == 0)
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiaStateCodeList.OrderBy(x => x.state);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
@@ -124,7 +124,7 @@ namespace CencusAnalyserProgram
         public string GetpopulationWiseSortedCensusData(string jsonFilepath, string key, int index)
         {
 
-            if (indiancensusList == null || indiancensusList.Count() == 0)
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiancensusList.OrderBy(x => x.population);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
@@ -135,7 +135,7 @@ namespace CencusAnalyserProgram
         public string GetpopulationDencityWiseSortedCensusData(string jsonFilepath, string key, int index)
         {
 
-            if (indiancensusList == null || indiancensusList.Count() == 0)
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = indiancensusList.OrderBy(x => x.dencityPerSqKm);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
@@ -146,9 +146,31 @@ namespace CencusAnalyserProgram
         public string GetpopulationWiseSortedUsCensusData(string jsonFilepath, string key, int index)
         {
 
-            if (UsCencusList == null || UsCencusList.Count() == 0)
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             object listAlphabetically = UsCencusList.OrderBy(x => x.population);
+            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+            File.WriteAllText(jsonFilepath, dataInJsonFormat);
+            return RetriveDataOnKey(jsonFilepath, key, index);
+        }
+
+        public string GetpopulationDencityWiseSortedUsCensusData(string jsonFilepath, string key, int index)
+        {
+
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
+                throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
+            object listAlphabetically = UsCencusList.OrderBy(x => x.populationDencity);
+            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+            File.WriteAllText(jsonFilepath, dataInJsonFormat);
+            return RetriveDataOnKey(jsonFilepath, key, index);
+        }
+
+        public string GettotalAreaWiseSortedUsCensusData(string jsonFilepath, string key, int index)
+        {
+
+            if (dictionaryCensus == null || dictionaryCensus.Count() == 0)
+                throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
+            object listAlphabetically = UsCencusList.OrderBy(x => x.totalArea);
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
