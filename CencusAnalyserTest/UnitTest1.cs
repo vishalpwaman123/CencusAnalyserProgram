@@ -311,5 +311,14 @@ namespace CencusAnalyserTest
             Assert.AreEqual("2.24", sortedData);
         }
 
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighestpopulationDencity()
+        {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 50);
+            Assert.AreEqual("92.32", sortedData);
+        }
+
     }
 }
