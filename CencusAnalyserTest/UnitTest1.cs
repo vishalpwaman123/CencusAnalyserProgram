@@ -208,7 +208,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",0);
+            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",0);
             Assert.AreEqual("Andhra Pradesh",sortedData);
         }
 
@@ -217,7 +217,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
-            string sortedData = censusAnalyser.GetStateCodeWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 28);
+            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 28);
             Assert.AreEqual("West Bengal", sortedData);
 
         }
@@ -227,7 +227,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
-            string sortedData = censusAnalyser.GetStateCodeWiseSortedData(INDIAN_STATE_CODE_JSON_PATH, "state", 0);
+            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 0);
             Assert.AreEqual("Andaman and Nicobar Islands", sortedData);
         }
 
@@ -236,7 +236,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadIndiaStateCode(INDIA_STATE_CODE_PATH);
-            string sortedData = censusAnalyser.GetStateCodeWiseSortedData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
+            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
             Assert.AreEqual("West Bengal", sortedData);
         }
 
@@ -289,7 +289,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
-            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "population", 0);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 0);
             Assert.AreEqual("563626", sortedData);
         }
 
@@ -298,7 +298,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
-            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "population", 50);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 50);
             Assert.AreEqual("37253956", sortedData);
         }
 
@@ -307,7 +307,7 @@ namespace CencusAnalyserTest
         {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.LoadUsCencusData(US_CENSUS_FILE_PATH);
-            string sortedData = censusAnalyser.GetpopulationWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 0);
+            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "populationDencity", 0);
             Assert.AreEqual("2.24", sortedData);
         }
 

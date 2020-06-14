@@ -105,7 +105,8 @@ namespace CencusAnalyserProgram
                 throw new CensusAnalyserException("No Census Data Found", CensusAnalyserException.ExceptionType.DATA_NOT_FOUND);
             return true;
         }
-        public string GetStateCodeWiseSortedCensusData(string jsonFilepath,string key,int index)
+        //1
+        public string GetStateWiseSortedCensusData(string jsonFilepath,string key,int index)
         {
 
             EmptyDirectory(dictionaryCensus);
@@ -114,17 +115,8 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key,index);
         }
-
-        public string GetStateCodeWiseSortedData(string jsonFilepath, string key, int index)
-        {
-
-            EmptyDirectory(dictionaryCensus);
-            object listAlphabetically = CencusList.OrderBy(x => x.state);
-            var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
-            File.WriteAllText(jsonFilepath, dataInJsonFormat);
-            return RetriveDataOnKey(jsonFilepath, key, index);
-        }
-
+       
+        //3
         public string GetpopulationWiseSortedCensusData(string jsonFilepath, string key, int index)
         {
 
@@ -134,7 +126,7 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
-
+        //4
         public string GetpopulationDencityWiseSortedCensusData(string jsonFilepath, string key, int index)
         {
 
@@ -144,8 +136,8 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
-
-        public string GetpopulationWiseSortedUsCensusData(string jsonFilepath, string key, int index)
+        //5
+        /*public string GetpopulationWiseSortedUsCensusData(string jsonFilepath, string key, int index)
         {
 
             EmptyDirectory(dictionaryCensus);
@@ -153,8 +145,8 @@ namespace CencusAnalyserProgram
             var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
-        }
-
+        }*/
+        //6
         public string GetpopulationDencityWiseSortedUsCensusData(string jsonFilepath, string key, int index)
         {
 
@@ -164,7 +156,7 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
-
+        //7
         public string GettotalAreaWiseSortedUsCensusData(string jsonFilepath, string key, int index)
         {
 
@@ -174,7 +166,7 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
-
+        
         private static string RetriveDataOnKey(string jsonPath, string key, int index)
         {
             string jfile = File.ReadAllText(jsonPath);
