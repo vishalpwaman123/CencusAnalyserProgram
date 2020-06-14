@@ -313,7 +313,7 @@ namespace CencusAnalyserTest
         }
 
         [Test]
-        public void givenuSCensusData_WhenPassNull_shouldThrowCustomException()
+        public void givenUsCencusData_WhenPassNull_shouldThrowCustomException()
         {
             try
             {
