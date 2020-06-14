@@ -62,6 +62,10 @@ namespace CencusAnalyserProgram
             {
                 throw new CensusAnalyserException(e.Message, CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW);
             }
+            catch (FieldAccessException e)
+            {
+                throw new CensusAnalyserException(e.Message, CensusAnalyserException.ExceptionType.FILE_NOT_FOUND);
+            }
             catch (Exception ex)
             {
             }

@@ -234,82 +234,129 @@ namespace CencusAnalyserTest
         [Test]
         public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnFirstState()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH,"state",0);
-            Assert.AreEqual("Andhra Pradesh",sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 0);
+                Assert.AreEqual("Andhra Pradesh", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLastState()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 28);
-            Assert.AreEqual("West Bengal", sortedData);
-
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 28);
+                Assert.AreEqual("West Bengal", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenIndianStateCodeCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnFirstState()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
-            censusAnalyser.LoadIndiaStateCode();
-            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 0);
-            Assert.AreEqual("Andaman and Nicobar Islands", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
+                censusAnalyser.LoadIndiaStateCode();
+                string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 0);
+                Assert.AreEqual("Andaman and Nicobar Islands", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenIndianStateCodeCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLastState()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
-            censusAnalyser.LoadIndiaStateCode();
-            string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
-            Assert.AreEqual("West Bengal", sortedData);
+            try 
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
+                censusAnalyser.LoadIndiaStateCode();
+                string sortedData = censusAnalyser.GetStateWiseSortedCensusData(INDIAN_STATE_CODE_JSON_PATH, "state", 36);
+                Assert.AreEqual("West Bengal", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowestPopulation()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 0);
-            Assert.AreEqual("607688", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 0);
+                Assert.AreEqual("607688", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
-        [Test]
-        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnPopulationDencity()
-        {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetpopulationDencityWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "dencityPerSqKm", 0);
-            Assert.AreEqual("50", sortedData);
-        }
 
         [Test]
         public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLargetArea()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "areaInSqKm",28);
-            Assert.AreEqual("240928", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "areaInSqKm", 28);
+                Assert.AreEqual("240928", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighestPopulation()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            censusAnalyser.LoadIndiaCensusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 28);
-            Assert.AreEqual("199812341", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "population", 28);
+                Assert.AreEqual("199812341", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCencusData_CSVFile_ShouldReturnsCorrectRecords()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            int csvstateData = censusAnalyser.LoadUsCencusData();
-            Assert.AreEqual(51, csvstateData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                int csvstateData = censusAnalyser.LoadUsCencusData();
+                Assert.AreEqual(51, csvstateData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
@@ -330,58 +377,131 @@ namespace CencusAnalyserTest
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowestPopulation()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 0);
-            Assert.AreEqual("563626", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 0);
+                Assert.AreEqual("563626", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighestPopulation()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 50);
-            Assert.AreEqual("37253956", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "population", 50);
+                Assert.AreEqual("37253956", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnpopulationDencity()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "populationDencity", 0);
-            Assert.AreEqual("2.24", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GetpopulationWiseSortedCensusData(US_CENCUS_JSON_PATH, "populationDencity", 0);
+                Assert.AreEqual("2.24", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighestpopulationDencity()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GetpopulationDencityWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 50);
-            Assert.AreEqual("3805.61", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GetpopulationDencityWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "populationDencity", 50);
+                Assert.AreEqual("3805.61", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnLowesttotalArea()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 0);
-            Assert.AreEqual("177", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 0);
+                Assert.AreEqual("177", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         [Test]
         public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnHighesttotalArea()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
-            censusAnalyser.LoadUsCencusData();
-            string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 50);
-            Assert.AreEqual("1723338.01", sortedData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 50);
+                Assert.AreEqual("1723338.01", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
-        
+        [Test]
+        public void givenIndianCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnPopulationDencity()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                censusAnalyser.LoadIndiaCensusData();
+                string sortedData = censusAnalyser.GetpopulationDencityWiseSortedCensusDataAndIndianStateCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "dencityPerSqKm", 0);
+                Assert.AreEqual("50", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
+        }
+
+        [Test]
+        public void givenUsCensusCSVData_WhenSorting_WhenAnalyseCsvtoJson_ReturnPopulationDencity()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
+                censusAnalyser.LoadUsCencusData();
+                string sortedData = censusAnalyser.GetpopulationDencityWiseSortedCensusDataAndIndianStateCensusData(US_CENCUS_JSON_PATH, "populationDencity", 0);
+                Assert.AreEqual("36.45", sortedData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
+        }
+
 
     }
 }

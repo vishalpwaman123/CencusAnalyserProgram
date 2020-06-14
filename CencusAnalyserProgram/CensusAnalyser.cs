@@ -90,7 +90,7 @@ namespace CencusAnalyserProgram
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
         
-        public string GetpopulationDencityWiseSortedCensusData(string jsonFilepath, string key, int index)
+        public string GetpopulationDencityWiseSortedCensusDataAndIndianStateCensusData(string jsonFilepath, string key, int index)
         {
 
             EmptyDictionary(dictionaryCensus);
@@ -119,6 +119,8 @@ namespace CencusAnalyserProgram
             File.WriteAllText(jsonFilepath, dataInJsonFormat);
             return RetriveDataOnKey(jsonFilepath, key, index);
         }
+
+
         
         private static string RetriveDataOnKey(string jsonPath, string key, int index)
         {

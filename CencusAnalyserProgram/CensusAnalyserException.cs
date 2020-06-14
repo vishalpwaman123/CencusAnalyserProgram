@@ -24,7 +24,8 @@ namespace CencusAnalyserProgram
             DELIMETER_INCORRECT_EXCEPTION,
             HEADER_INCORRECT,
             DATA_NOT_FOUND,
-            NULL_PATH_NOT_ALLOW
+            NULL_PATH_NOT_ALLOW,
+            FILE_NOT_FOUND
         }
 
         public ExceptionType type;
