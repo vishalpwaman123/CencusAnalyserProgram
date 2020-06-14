@@ -36,6 +36,20 @@ namespace CencusAnalyserTest
             
         }
 
+        [Test]
+        public void givenIndiaCensusData_WhenPassNull_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(null);
+                censusAnalyser.LoadIndiaCensusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NAME_FOUND, e.type);
+            }
+
+        }
 
         /// <summary>
         /// Given incorrect file path to load the data should throw exception
@@ -337,6 +351,8 @@ namespace CencusAnalyserTest
             string sortedData = censusAnalyser.GettotalAreaWiseSortedUsCensusData(US_CENCUS_JSON_PATH, "totalArea", 50);
             Assert.AreEqual("1723338.01", sortedData);
         }
+
+        
 
     }
 }

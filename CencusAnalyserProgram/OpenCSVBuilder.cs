@@ -58,6 +58,9 @@ namespace CencusAnalyserProgram
             catch (IndexOutOfRangeException e)
             {
                 throw new CensusAnalyserException(e.Message, CensusAnalyserException.ExceptionType.HEADER_INCORRECT);
+            }catch(NullReferenceException e)
+            {
+                throw new CensusAnalyserException(e.Message, CensusAnalyserException.ExceptionType.NULL_PATH_NAME_FOUND);
             }
             catch (Exception ex)
             {

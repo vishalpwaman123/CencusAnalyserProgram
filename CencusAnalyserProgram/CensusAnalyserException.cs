@@ -23,7 +23,8 @@ namespace CencusAnalyserProgram
             CENSUS_FILE_WRONGE_EXTENSION,
             DELIMETER_INCORRECT_EXCEPTION,
             HEADER_INCORRECT,
-            DATA_NOT_FOUND
+            DATA_NOT_FOUND,
+            NULL_PATH_NAME_FOUND
         }
 
         public ExceptionType type;
