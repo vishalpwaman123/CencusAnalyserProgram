@@ -46,7 +46,7 @@ namespace CencusAnalyserTest
             }
             catch (CensusAnalyserException e)
             {
-                Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NAME_FOUND, e.type);
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
             }
 
         }
@@ -142,6 +142,20 @@ namespace CencusAnalyserTest
             Assert.AreEqual(37, csvstateData);
         }
 
+        [Test]
+        public void givenIndianStateCode_WhenPassNull_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(null);
+                censusAnalyser.LoadIndiaStateCode();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
+            }
+
+        }
 
         /// <summary>
         /// Given incorrect file path to load the data should throw exception
@@ -296,6 +310,21 @@ namespace CencusAnalyserTest
             CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);
             int csvstateData = censusAnalyser.LoadUsCencusData();
             Assert.AreEqual(51, csvstateData);
+        }
+
+        [Test]
+        public void givenuSCensusData_WhenPassNull_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(null);
+                censusAnalyser.LoadUsCencusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
+            }
+
         }
 
         [Test]
