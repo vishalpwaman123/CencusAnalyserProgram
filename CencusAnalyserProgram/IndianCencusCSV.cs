@@ -4,7 +4,9 @@ using System.Text;
 
 namespace CencusAnalyserProgram
 {
-    //State,Population,AreaInSqKm,DensityPerSqKm
+    /// <summary>
+    /// Declare Variable with get and set method.
+    /// </summary>
     public class IndianCencusCSV
     {
         public string state { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -69,6 +70,12 @@ namespace CencusAnalyserProgram
 
         }
 
+        /// <summary>
+        /// This Method is Used to Load Us data
+        /// </summary>
+        /// <param name="path">path parameter contains the path of the DataTable File</param>
+        /// <returns>It returns the loaded data List</returns>
+
         public List<CencusDAO> UsDataAssigned(DataTable csvCensusData)
         {
             int row = 0;
@@ -86,6 +93,11 @@ namespace CencusAnalyserProgram
             return CencusList;
         }
 
+        /// <summary>
+        /// This Method is Used to Load Indian State Data
+        /// </summary>
+        /// <param name="path">path parameter contains the path of the DataTable File</param>
+        /// <returns>It returns the loaded data List</returns>
         public List<CencusDAO> IndianStateDataAssigned(DataTable csvCensusData)
         {
             int row = 0;
@@ -102,6 +114,11 @@ namespace CencusAnalyserProgram
             return CencusList;
         }
 
+        /// <summary>
+        /// This Method is Used to Load Census Data
+        /// </summary>
+        /// <param name="path">path parameter contains the path of the DataTable File</param>
+        /// <returns>It returns the loaded data List</returns>
         public List<CencusDAO> CensusDataAssigned(DataTable csvCensusData)
         {
             int row = 0;

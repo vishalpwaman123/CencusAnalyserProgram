@@ -6,7 +6,9 @@ namespace CencusAnalyserProgram
 {
     public class CencusDAO
     {
-        
+        /// <summary>
+        /// Declare Variable with get and set method.
+        /// </summary>
         public string stateId { get; set; }
         public string state { get; set; }
         public Int32 population { get; set; }

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace CencusAnalyserProgram
 {
-    //SrNo,State Name,TIN,StateCode
+    /// <summary>
+    /// Declare Variable with get and set method.
+    /// </summary>
     public class IndianStateCodeCSV
     {
 
