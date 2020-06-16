@@ -29,7 +29,13 @@ namespace CencusAnalyserProgram
 
         public CensusAnalyser(string path)
         {
-            csvCensusData = cSVBuilder.DataLoader(path);
+            try
+            {
+                csvCensusData = cSVBuilder.DataLoader(path);
+            }catch(FileNotFoundException e)
+            {
+                throw new CensusAnalyserException(e.Message, CensusAnalyserException.ExceptionType.FILE_NOT_FOUND);
+            }
         }
 
         /// <summary>

@@ -11,7 +11,6 @@ namespace CencusAnalyserTest
         /// <summary>
         /// Used string variables to store the csv file paths
         /// </summary>
-        
         private static string INDIA_CENSUS_CSV_FILE_PATH = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCensusData.csv";
         private static string WRONG_CSV_FILE_PATH = @"./src/main/resources/IndiaStateCensusData.csv";
         private static string WRONG_CSV_FILE_EXTENSION = @"C:/Users/Vishal/source/repos/CencusAnalyserProgram/CencusAnalyserTest/Resources/IndiaStateCensusData.pdf";
@@ -29,14 +28,19 @@ namespace CencusAnalyserTest
         /// <summary>
         /// Load the Indian Census File and Check For the number of records present in the file
         /// </summary>
-
         [Test]
         public void givenIndianCensusData_CSVFile_ShouldReturnsCorrectRecords()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
-            int csvDatacount = censusAnalyser.LoadIndiaCensusData();
-            Assert.AreEqual(29,csvDatacount);
-            
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);         //LOAD INDIA CENSUS CSV FILE
+                int csvDatacount = censusAnalyser.LoadIndiaCensusData();
+                Assert.AreEqual(29, csvDatacount);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         /// <summary>
@@ -47,48 +51,58 @@ namespace CencusAnalyserTest
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(null);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(null);       //LOAD NULL
                 censusAnalyser.LoadIndiaCensusData();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
             }
+        }
 
+        /// <summary>
+        /// Load the Empty Parameter and Throw Null Path Not Allow Exception
+        /// </summary>
+        [Test]
+        public void givenIndiaCensusData_WhenPassEmptyString_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(" ");       //LOAD NULL
+                censusAnalyser.LoadIndiaCensusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         /// <summary>
         /// Given incorrect file path to load the data should throw exception
         /// </summary>
-
-
         [Test]
         public void givenIndiaCensusData_WhenWrongPathName_shouldThrowCustomException() 
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_PATH);        //LOAD WRONG CSV FILE
                 censusAnalyser.LoadIndiaCensusData();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM, e.type);
             }
-            
         }
-
 
         /// <summary>
         /// Given file path with incorrect extension type to load the data should throw exception
         /// </summary>
-
-
         [Test]
         public void givenIndiaCensusData_WhenWrongExtension_shouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);       //LOAD WRONG CSV EXTENSION FILE 
                 censusAnalyser.LoadIndiaCensusData();
             }
             catch (CensusAnalyserException e)
@@ -100,32 +114,29 @@ namespace CencusAnalyserTest
         /// <summary>
         /// Given file with incorrect Delimeter to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndiaCensusData_WhenDelimeterIncorrect_shouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);  //LOAD WRONG CSV EXTENSION FILE
                 censusAnalyser.LoadIndiaCensusData();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMETER_INCORRECT_EXCEPTION, e.type);
             }
-
         }
 
         /// <summary>
         /// Given file with incorrect header to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndianCensusCSVData__WhenIncorrectHeader_ShouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);  //LOAD INDIA CENSUS CSV FILE PATH
                 censusAnalyser.LoadIndiaCensusData();
             }
             catch (CensusAnalyserException e)
@@ -134,18 +145,39 @@ namespace CencusAnalyserTest
             }
         }
 
-
         /// <summary>
         /// Load the Indian Statem Code File and Check For the number of records present in the file
         /// </summary>
-
-
         [Test]
         public void givenIndianStateCode_CSVFile_ShouldReturnsCorrectRecords()
         {
-            CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
-            int csvstateData = censusAnalyser.LoadIndiaStateCode();
-            Assert.AreEqual(37, csvstateData);
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);      //LOAD INDIA STATE CODE PATH
+                int csvstateData = censusAnalyser.LoadIndiaStateCode();
+                Assert.AreEqual(37, csvstateData);
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
+        }
+
+        /// <summary>
+        /// Load the Empty Parameter and Throw Null Path Not Allow Exception
+        /// </summary>
+        [Test]
+        public void givenIndiaStateCodeData_WhenPassEmptyString_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(" ");       //LOAD NULL
+                censusAnalyser.LoadIndiaStateCode();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
         }
 
         /// <summary>
@@ -156,45 +188,41 @@ namespace CencusAnalyserTest
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(null);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(null);       //LOAD NULL
                 censusAnalyser.LoadIndiaStateCode();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
             }
-
         }
 
         /// <summary>
         /// Given incorrect file path to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndianStateCode_WhenWrongPathName_shouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(WORNG_INDIA_STATE_CODE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WORNG_INDIA_STATE_CODE_PATH);        //LOAD WORNG INDIA STATE CODE PATH
                 censusAnalyser.LoadIndiaStateCode();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM, e.type);
             }
-
         }
 
         /// <summary>
         /// Given file path with incorrect extension type to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndianStateCode_WhenWrongExtension_shouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_STATE_CODE_FILE_EXTENSION);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_STATE_CODE_FILE_EXTENSION);        //LOAD WRONG STATE CODE EXTENSION FILE
                 censusAnalyser.LoadIndiaStateCode();
             }
             catch (CensusAnalyserException e)
@@ -206,32 +234,29 @@ namespace CencusAnalyserTest
         /// <summary>
         /// Given file with incorrect Delimeter to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndiaStateCode_WhenDelimeterIncorrect_shouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);      //LOAD INDIA STATE CODE PATH
                 censusAnalyser.LoadIndiaStateCode();
             }
             catch (CensusAnalyserException e)
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMETER_INCORRECT_EXCEPTION, e.type);
             }
-
         }
 
         /// <summary>
         /// Given file with incorrect header to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndianStateCode_WhenIncorrectHeader_ShouldThrowCustomException()
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_STATE_CODE_PATH);      //LOAD INDIA STATE CODE PATH
                 censusAnalyser.LoadIndiaStateCode();
             }
             catch (CensusAnalyserException e)
@@ -248,7 +273,7 @@ namespace CencusAnalyserTest
         {
             try
             {
-                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);
+                CensusAnalyser censusAnalyser = new CensusAnalyser(INDIA_CENSUS_CSV_FILE_PATH);     //LOAD INDIA CENSUS CSV FILE PATH
                 censusAnalyser.LoadIndiaCensusData();
                 string sortedData = censusAnalyser.GetSortedCensusData(INDIAN_STATE_CENSUS_JSON_PATH, "state", 0);
                 Assert.AreEqual("Andhra Pradesh", sortedData);
@@ -258,7 +283,6 @@ namespace CencusAnalyserTest
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
             }
         }
-
 
         /// <summary>
         /// Load the INDIA CENSUS CSV FILE PATH and Check Return Assumption of Given Index.
@@ -282,7 +306,6 @@ namespace CencusAnalyserTest
         /// <summary>
         /// Given incorrect file path to load the data should throw exception
         /// </summary>
-
         [Test]
         public void givenIndianCensusData_WhenWrongPathName_shouldThrowCustomException()
         {
@@ -295,7 +318,6 @@ namespace CencusAnalyserTest
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.WRONG_JSON_PATH, e.type);
             }
-
         }
 
         /// <summary>
@@ -335,7 +357,6 @@ namespace CencusAnalyserTest
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
             }
         }
-
 
         /// <summary>
         /// Load the INDIA CENSUS CSV FILE PATH and Check Return Assumption of Given Index.
@@ -413,6 +434,23 @@ namespace CencusAnalyserTest
         }
 
         /// <summary>
+        /// Load the Empty Parameter and Throw Null Path Not Allow Exception
+        /// </summary>
+        [Test]
+        public void givenUsCensusData_WhenPassEmptyString_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(" ");       //LOAD NULL
+                censusAnalyser.LoadUsCencusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
+            }
+        }
+
+        /// <summary>
         /// Load the Null Parameter and Throw Null Path Not Allow Exception
         /// </summary>
         [Test]
@@ -427,7 +465,6 @@ namespace CencusAnalyserTest
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.NULL_PATH_NOT_ALLOW, e.type);
             }
-
         }
 
         /// <summary>
@@ -445,7 +482,57 @@ namespace CencusAnalyserTest
             {
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.WRONG_JSON_PATH, e.type);
             }
+        }
 
+        /// <summary>
+        /// Given file path with incorrect extension type to load the data should throw exception
+        /// </summary>
+        [Test]
+        public void givenUsCensusData_WhenWrongExtension_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);       //LOAD WRONG CSV EXTENSION FILE 
+                censusAnalyser.LoadUsCencusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.CENSUS_FILE_WRONGE_EXTENSION, e.type);
+            }
+        }
+
+        /// <summary>
+        /// Given file with incorrect Delimeter to load the data should throw exception
+        /// </summary>
+        [Test]
+        public void givenUsCensusData_WhenDelimeterIncorrect_shouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(WRONG_CSV_FILE_EXTENSION);  //LOAD WRONG CSV EXTENSION FILE
+                censusAnalyser.LoadUsCencusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.DELIMETER_INCORRECT_EXCEPTION, e.type);
+            }
+        }
+
+        /// <summary>
+        /// Given file with incorrect header to load the data should throw exception
+        /// </summary>
+        [Test]
+        public void givenUsCensusCSVData__WhenIncorrectHeader_ShouldThrowCustomException()
+        {
+            try
+            {
+                CensusAnalyser censusAnalyser = new CensusAnalyser(US_CENSUS_FILE_PATH);  //LOAD INDIA CENSUS CSV FILE PATH
+                censusAnalyser.LoadUsCencusData();
+            }
+            catch (CensusAnalyserException e)
+            {
+                Assert.AreEqual(CensusAnalyserException.ExceptionType.HEADER_INCORRECT, e.type);
+            }
         }
 
         /// <summary>
@@ -599,8 +686,5 @@ namespace CencusAnalyserTest
                 Assert.AreEqual(CensusAnalyserException.ExceptionType.FILE_NOT_FOUND, e.type);
             }
         }
-
-        
-
     }
 }
