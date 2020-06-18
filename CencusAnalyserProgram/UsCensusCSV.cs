@@ -1,18 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// <copyright file="UsCencusCSV.cs" company="BridgeLab">
+//      Copyright (c) Company. All rights reserved.
+// </copyright>
+// <author>Vishal Waman</author>
 
 namespace CencusAnalyserProgram
 {
-    //State_Id	State	Population	Housing_units	Total_area	Water_area	Land_area	Population_Density	Housing_Density
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
+    /// <summary>
+    /// Define class
+    /// </summary>
     public class UsCencusCSV
     {
-        public string stateId { get; set; }
-        public string state { get; set; }
-        public Int32 population { get; set; }
-        public double totalArea { get; set; }
-        public double populationDencity { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
+        public string StateId { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
+        public string State { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
+        public int Population { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
+        public double TotalArea { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
+        public double PopulationDencity { get; set; }
     }
 }

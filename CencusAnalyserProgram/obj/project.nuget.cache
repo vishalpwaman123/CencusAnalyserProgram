@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8ndWK309Vv1ECnFMX9Z+XEJrRl5JQrTVZrE7BQLWilsI89mgq0ypkt/Yyo+3NSTkEW4i0tUih/HS7R+rHBQrPA==",
+  "dgSpecHash": "ESDZRKCvEvXNYwcbeytW/5XZWwnUktI1vCNXmTa27bKVJWwIa2QvOwI6gIgiE/Ia0NTnji1Nk3PeO6QokZO4/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vishal\\source\\repos\\CencusAnalyserProgram\\CencusAnalyserProgram\\CencusAnalyserProgram.csproj",
   "expectedPackageFiles": [
@@ -31,8 +31,7 @@
     "C:\\Users\\Vishal\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
     "C:\\Users\\Vishal\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Vishal\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "C:\\Users\\Vishal\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\Vishal\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\Vishal\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
