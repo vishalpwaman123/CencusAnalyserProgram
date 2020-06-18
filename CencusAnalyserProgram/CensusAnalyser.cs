@@ -126,7 +126,7 @@ namespace CencusAnalyserProgram
         /// <param name="key">Header Name</param>
         /// <param name="index">Row Number</param>
         /// <returns>It returns the fetch Data OnKey in integer Format</returns>
-        public string GetpopulationDencityWiseSortedUsCensusDataAndIndianStateCensusData(string jsonFilepath, string key, int index)
+        public JArray GetpopulationDencityWiseSortedUsCensusDataAndIndianStateCensusData(string jsonFilepath, string key, int index)
         {
             this.EmptyDictionary(this.dictionaryCensus);
             object listAlphabetically = this.cencusList.OrderBy(x => x.DencityPerSqKm);
@@ -142,50 +142,43 @@ namespace CencusAnalyserProgram
         /// <param name="key">Header Name</param>
         /// <param name="index">Row Number</param>
         /// <returns>It returns the fetch Data OnKey in integer Format</returns>
-        public string GetSortedCensusData(string jsonFilepath, string key, int index)
+        public JArray GetSortedCensusData(string jsonFilepath, string key, int index)
         {
+            object listAlphabetically= null;
             try
             {
                 this.EmptyDictionary(this.dictionaryCensus);
                 switch (key)
                 {
                     case "State":
-                        object listAlphabetically1 = this.cencusList.OrderBy(x => x.State);
-                        var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically1, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.State);
                         break;
 
                     case "TotalArea":
-                        object listAlphabetically2 = this.cencusList.OrderBy(x => x.TotalArea);
-                        var dataInJsonFormat1 = JsonConvert.SerializeObject(listAlphabetically2, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat1);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.TotalArea);
                         break;
 
                     case "PopulationDencity":
-                        object listAlphabetically3 = this.cencusList.OrderBy(x => x.PopulationDencity);
-                        var dataInJsonFormat2 = JsonConvert.SerializeObject(listAlphabetically3, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat2);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.PopulationDencity);
                         break;
 
                     case "DencityPerSqKm":
-                        object listAlphabetically4 = this.cencusList.OrderBy(x => x.DencityPerSqKm);
-                        var dataInJsonFormat4 = JsonConvert.SerializeObject(listAlphabetically4, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat4);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.DencityPerSqKm);
                         break;
 
                     case "Population":
-                        object listAlphabetically5 = this.cencusList.OrderBy(x => x.Population);
-                        var dataInJsonFormat5 = JsonConvert.SerializeObject(listAlphabetically5, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat5);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.Population);
                         break;
 
                     case "AreaInSqKm":
-                        object listAlphabetically6 = this.cencusList.OrderBy(x => x.AreaInSqKm);
-                        var dataInJsonFormat6 = JsonConvert.SerializeObject(listAlphabetically6, Formatting.Indented);
-                        File.WriteAllText(jsonFilepath, dataInJsonFormat6);
+                        listAlphabetically = this.cencusList.OrderBy(x => x.AreaInSqKm);
                         break;
-                }
 
+                    default :
+                        throw new CensusAnalyserException("No Header found", CensusAnalyserException.ExceptionType.INDEX_NOT_FOUND);
+                }
+                var dataInJsonFormat = JsonConvert.SerializeObject(listAlphabetically, Formatting.Indented);
+                File.WriteAllText(jsonFilepath, dataInJsonFormat);
                 return this.RetriveDataOnKey(jsonFilepath, key, index);
             }
             catch (FileNotFoundException e)
@@ -212,12 +205,11 @@ namespace CencusAnalyserProgram
         /// <param name="key">Header name</param>
         /// <param name="index">row number</param>
         /// <returns>It returns the fetch Data On Key in integer Format</returns>        
-        private string RetriveDataOnKey(string jsonPath, string key, int index)
+        private JArray RetriveDataOnKey(string jsonPath, string key, int index)
         {
-            string jfile = File.ReadAllText(jsonPath);
-            JArray array = JArray.Parse(jfile);
-            string val = array[index][key].ToString();
-            return val;
+            string jsonfile = File.ReadAllText(jsonPath);
+            JArray array = JArray.Parse(jsonfile);
+            return array;
         }
     }
  }

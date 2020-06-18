@@ -84,7 +84,12 @@ namespace CencusAnalyserProgram
             /// <summary>
             /// Define for WRONG JSON PATH
             /// </summary>
-            WRONG_JSON_PATH
+            WRONG_JSON_PATH,
+
+            /// <summary>
+            /// Define for INDEX NOT FOUND
+            /// </summary>
+            INDEX_NOT_FOUND
         }
     }
 }
